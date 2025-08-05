@@ -6,12 +6,14 @@ function calculateAverage(numArray: number[]): number {
 }
 
 interface StudentScore {
+    readonly id: number; 
     name: string;
     scores: number[];
     cohort?: string; //expansion
 }
 
 let studentOne: StudentScore = {
+    id: 1,
     name: "Johnny",
     scores: [81, 73, 92]
 }
@@ -26,9 +28,9 @@ function filterPassingStudents(studentScores: StudentScore[]): Array<string> {
 }
 
 const students = [
-  { name: "Alice", scores: [80, 90, 100] },
-  { name: "Bob", scores: [50, 60, 70], cohort: "Bootcamp-2" },
-  { name: "Charlie", scores: [75, 75, 75] }
+  { id: 2, name: "Alice", scores: [80, 90, 100] },
+  { id: 3, name: "Bob", scores: [50, 60, 70], cohort: "Bootcamp-2" },
+  { id: 4, name: "Charlie", scores: [75, 75, 75] }
 ]
 
 console.log(filterPassingStudents(students))
@@ -43,3 +45,9 @@ function addDefaultCohort(studentScores: StudentScore[]): StudentScore[] {
 }
 
 console.log(addDefaultCohort(students))
+
+function getStudentSummary(studentScore: StudentScore): [string, number] {
+    return [studentScore.name, calculateAverage(studentScore.scores)]
+}
+
+console.log(getStudentSummary(studentOne))
