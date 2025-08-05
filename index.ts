@@ -50,4 +50,6 @@ function getStudentSummary(studentScore: StudentScore): [string, number] {
     return [studentScore.name, calculateAverage(studentScore.scores)]
 }
 
-console.log(getStudentSummary(studentOne))
+students.forEach(student => {
+    console.log(getStudentSummary(student));
+})
