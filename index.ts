@@ -5,6 +5,11 @@ function calculateAverage(numArray: number[]): number {
     return (total / numArray.length);
 }
 
+function getStatus(student: StudentScore): string {
+    let average: number = calculateAverage(student.scores)
+    return average >= 75 ? "passing" : "failing";
+}
+
 interface StudentScore {
     readonly id: number; 
     name: string;
@@ -18,7 +23,8 @@ let studentOne: StudentScore = {
     scores: [81, 73, 92]
 }
 
-console.log(calculateAverage(studentOne.scores))
+console.log("Student 1 status: " + getStatus(studentOne));
+console.log(calculateAverage(studentOne.scores));
 
 function filterPassingStudents(studentScores: StudentScore[]): Array<string> {
     return studentScores.filter(student => (
@@ -46,8 +52,8 @@ function addDefaultCohort(studentScores: StudentScore[]): StudentScore[] {
 
 console.log(addDefaultCohort(students))
 
-function getStudentSummary(studentScore: StudentScore): [string, number] {
-    return [studentScore.name, calculateAverage(studentScore.scores)]
+function getStudentSummary(studentScore: StudentScore): [string, number, string] {
+    return [studentScore.name, calculateAverage(studentScore.scores), getStatus(studentScore)]
 }
 
 students.forEach(student => {
