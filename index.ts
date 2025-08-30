@@ -1,61 +1,27 @@
-function calculateAverage(numArray: number[]): number {
-    let total: number = numArray.reduce((accum, element): number => {
-        return accum + element;
-    }, 0)
-    return (total / numArray.length);
-}
+import * as StudentFunction from "./studentFunctions";
+import { StudentScore } from "./types";
 
-function getStatus(student: StudentScore): string {
-    let average: number = calculateAverage(student.scores)
-    return average >= 75 ? "passing" : "failing";
-}
-
-interface StudentScore {
-    readonly id: number; 
-    name: string;
-    scores: number[];
-    cohort?: string; //expansion
-}
-
+//Student declarations
 let studentOne: StudentScore = {
     id: 1,
     name: "Johnny",
     scores: [81, 73, 92]
 }
 
-console.log("Student 1 status: " + getStatus(studentOne));
-console.log(calculateAverage(studentOne.scores));
-
-function filterPassingStudents(studentScores: StudentScore[]): Array<string> {
-    return studentScores.filter(student => (
-        calculateAverage(student.scores) >= 75
-    ))
-    .map(student => student.name)
-}
-
-const students = [
-  { id: 2, name: "Alice", scores: [80, 90, 100] },
-  { id: 3, name: "Bob", scores: [50, 60, 70], cohort: "Bootcamp-2" },
-  { id: 4, name: "Charlie", scores: [75, 75, 75] }
+const students: StudentScore[] = [
+    studentOne,
+    { id: 2, name: "Alice", scores: [80, 90, 100] },
+    { id: 3, name: "Bobby", scores: [50, 60, 70], cohort: "Bootcamp-2" },
+    { id: 4, name: "Charlie", scores: [75, 75, 75], cohort: "Bootcamp-3"  }
 ]
 
-console.log(filterPassingStudents(students))
-
-function addDefaultCohort(studentScores: StudentScore[]): StudentScore[] {
-    return studentScores.map(student => {
-        if (!student.cohort) {
-            student.cohort = "Bootcamp-1"
-        }
-        return student;
-    })
-}
-
-console.log(addDefaultCohort(students))
-
-function getStudentSummary(studentScore: StudentScore): [string, number, string] {
-    return [studentScore.name, calculateAverage(studentScore.scores), getStatus(studentScore)]
-}
+console.log("Student 1 status: " + StudentFunction.getStatus(studentOne));
+console.log(StudentFunction.calculateAverage(studentOne.scores));
+console.log(StudentFunction.filterPassingStudents(students))
+console.log(StudentFunction.addDefaultCohort(students))
 
 students.forEach(student => {
-    console.log(getStudentSummary(student));
+    console.log(StudentFunction.getStudentSummary(student));
 })
+
+console.log(StudentFunction.groupByCohort(students));
