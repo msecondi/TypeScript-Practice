@@ -18,6 +18,10 @@ StudentScore Interface: This interface defines the structure of a student object
 
 **getStudentSummary(studentScore: StudentScore):** This function takes a single student object and returns a tuple—an ordered array with a fixed number of elements. The tuple contains the student's name and their calculated average score.
 
+**groupByCohort(students: StudentScore[]): Record<string, string[]>** Groups students by their cohort and returns an object where the keys are cohort names and the values are arrays of student names.
+
+**rankStudents(studentScores: StudentScore[]): {name: string, average: number}[]** Produces a ranking of students based on their average scores, highest to lowest. Returns a simplified structure with just name and average. If there’s a tie, sorting alphabetically by name can be added (currently not implemented).
+
 ## How to Run
 To run this file, you'll need to have Node.js and TypeScript installed on your system.
 

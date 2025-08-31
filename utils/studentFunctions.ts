@@ -43,9 +43,20 @@ export function groupByCohort(students: StudentScore[]): Record<string, string[]
         if(!groupedStudents[cohort]) {
             groupedStudents[cohort] = [];
         }
-
         groupedStudents[cohort].push(student.name);
     }
-
     return groupedStudents;
+}
+
+// Write a function rankStudents(studentScores: StudentScore[]): StudentScore[] that sorts students by their average score,
+// highest to lowest. If there’s a tie, sort alphabetically by name.
+
+export function rankStudents(studentScores: StudentScore[]): {name: string, average: number}[] {
+    let average = studentScores.map((student: StudentScore) => {
+        return {
+            name: student.name,
+            average: calculateAverage(student.scores),
+        }
+    });
+    return average.sort((a, b) => (b.average - a.average));
 }

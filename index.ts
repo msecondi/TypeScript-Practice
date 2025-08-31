@@ -26,3 +26,4 @@ students.forEach(student => {
 })
 
 console.log(StudentFunction.groupByCohort(students));
+console.log(StudentFunction.rankStudents(students));
