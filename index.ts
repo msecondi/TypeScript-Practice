@@ -1,13 +1,14 @@
-import * as StudentFunction from "./studentFunctions";
-import { StudentScore } from "./types";
+import * as StudentFunction from "./utils/studentFunctions";
+import { StudentScore } from "./utils/types";
 
-//Student declarations
+//Individual Student declaration
 let studentOne: StudentScore = {
     id: 1,
     name: "Johnny",
     scores: [81, 73, 92]
 }
 
+// Array of students of type 'StudentScore'
 const students: StudentScore[] = [
     studentOne,
     { id: 2, name: "Alice", scores: [80, 90, 100] },
