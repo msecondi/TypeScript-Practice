@@ -17,13 +17,13 @@ const students: StudentScore[] = [
 ]
 
 console.log("Student 1 status: " + StudentFunction.getStatus(studentOne));
-console.log(StudentFunction.calculateAverage(studentOne.scores));
-console.log(StudentFunction.filterPassingStudents(students))
-console.log(StudentFunction.addDefaultCohort(students))
+// console.log(StudentFunction.calculateAverage(studentOne.scores));
+// console.log(StudentFunction.filterPassingStudents(students))
+// console.log(StudentFunction.addDefaultCohort(students))
 
-students.forEach(student => {
-    console.log(StudentFunction.getStudentSummary(student));
-})
+// students.forEach(student => {
+//     console.log(StudentFunction.getStudentSummary(student));
+// })
 
-console.log(StudentFunction.groupByCohort(students));
-console.log(StudentFunction.rankStudents(students));
+// console.log(StudentFunction.groupByCohort(students));
+// console.log(StudentFunction.rankStudents(students));

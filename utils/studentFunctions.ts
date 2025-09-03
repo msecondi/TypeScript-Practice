@@ -17,7 +17,7 @@ export function filterPassingStudents(studentScores: StudentScore[]): Array<stri
 
 export function getStatus(student: StudentScore): string {
     let average: number = calculateAverage(student.scores)
-    return average >= 75 ? "passing" : "failing";
+    return student.status = average >= 75 ? "passing" : "failing";
 }
 
 export function getStudentSummary(studentScore: StudentScore): [string, number, string] {
