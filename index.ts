@@ -1,7 +1,7 @@
 import * as StudentFunction from "./utils/studentFunctions";
 import { StudentScore } from "./utils/types";
 
-//Individual Student declaration
+//Individual Student declarations
 let studentOne: StudentScore = {
     id: 1,
     name: "Johnny",
@@ -11,23 +11,52 @@ let studentOne: StudentScore = {
         { subject: "science", score: 92 }
     ]
 }
+let studentTwo: StudentScore = {
+    id: 2, 
+    name: "Alice", 
+    scores: [ 
+        { subject: "math", score: 80 }, 
+        { subject: "english", score: 90 }, 
+        { subject: "science", score: 100 }
+    ]
+}
+let studentThree: StudentScore = {
+    id: 3, 
+    name: "Bobby", 
+    scores: [ 
+        { subject: "math", score: 50 }, 
+        { subject: "english", score: 60 }, 
+        { subject: "science", score: 70 }
+    ],
+    cohort: "Bootcamp-2"
+}
+let studentFour: StudentScore = {
+    id: 4, 
+    name: "Charlie", 
+    scores: [ 
+        { subject: "math", score: 75 }, 
+        { subject: "english", score: 75 }, 
+        { subject: "science", score: 75 }
+    ],
+    cohort: "Bootcamp-3"
+}
 
 // Array of students of type 'StudentScore'
-// const students: StudentScore[] = [
-//     studentOne,
-//     { id: 2, name: "Alice", scores: [80, 90, 100] },
-//     { id: 3, name: "Bobby", scores: [50, 60, 70], cohort: "Bootcamp-2" },
-//     { id: 4, name: "Charlie", scores: [75, 75, 75], cohort: "Bootcamp-3"  }
-// ]
+const students: StudentScore[] = [
+    studentOne,
+    studentTwo,
+    studentThree,
+    studentFour
+]
 
 console.log("Student 1 status: " + StudentFunction.getStatus(studentOne));
 console.log(StudentFunction.calculateAverage(studentOne.scores));
-// console.log(StudentFunction.filterPassingStudents(students))
-// console.log(StudentFunction.addDefaultCohort(students))
+console.log(StudentFunction.filterPassingStudents(students))
+console.log(StudentFunction.addDefaultCohort(students))
 
-// students.forEach(student => {
-//     console.log(StudentFunction.getStudentSummary(student));
-// })
+students.forEach(student => {
+    console.log(StudentFunction.getStudentSummary(student));
+})
 
-// console.log(StudentFunction.groupByCohort(students));
-// console.log(StudentFunction.rankStudents(students));
+console.log(StudentFunction.groupByCohort(students));
+console.log(StudentFunction.rankStudents(students));
