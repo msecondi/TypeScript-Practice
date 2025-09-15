@@ -1,26 +1,26 @@
-# Student Management in TypeScript
-This project contains a simple TypeScript file that demonstrates fundamental concepts by managing student data and calculating scores.
+# TypeScript Practice Repository
 
-The code defines a data structure for a student and includes several functions to perform common operations, such as calculating averages, filtering data, and modifying records.
+This repository exists solely as a sandbox for practicing **TypeScript**.  
+It is not a production project, portfolio piece, or finished application.  
+Expect messy code, experiments, and plenty of trial and error.
 
-## Key Features and Functions
-StudentScore Interface: This interface defines the structure of a student object, including their id, name, and an array of scores. It also demonstrates:
+---
 
-**readonly property (id)** to prevent accidental modification.
+## Purpose
 
-**Optional property (cohort?)** to handle records that might not have this field.
+- Explore TypeScript syntax and language features
+- Build familiarity with type safety, interfaces, generics, and more
+- Practice refactoring JavaScript code into TypeScript
+- Gain comfort with tooling, configs, and compilation
 
-**calculateAverage(numArray: number[]):** A function that takes an array of numbers and returns their average. It uses the .reduce() array method to sum the elements.
+---
 
-**filterPassingStudents(studentScores: StudentScore[]):** This function filters an array of StudentScore objects. It returns the names of all students whose average score is 75 or higher. It chains the .filter() and .map() array methods for a concise result.
+## Setup
 
-**addDefaultCohort(studentScores: StudentScore[]):** This function iterates through a list of students and assigns a default "Bootcamp-1" value to the cohort field if it is not already present.
-
-**getStudentSummary(studentScore: StudentScore):** This function takes a single student object and returns a tuple—an ordered array with a fixed number of elements. The tuple contains the student's name and their calculated average score.
-
-**groupByCohort(students: StudentScore[]): Record<string, string[]>** Groups students by their cohort and returns an object where the keys are cohort names and the values are arrays of student names.
-
-**rankStudents(studentScores: StudentScore[]): {name: string, average: number}[]** Produces a ranking of students based on their average scores, highest to lowest. Returns a simplified structure with just name and average. If there’s a tie, sorting alphabetically by name can be added (currently not implemented).
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/msecondi/TypeScript-Practice
+   cd TypeScript-Practice
 
 ## How to Run
 To run this file, you'll need to have Node.js and TypeScript installed on your system.

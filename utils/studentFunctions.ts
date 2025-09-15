@@ -1,28 +1,28 @@
-import { StudentScore } from "./types";
+import { StudentScore, SubjectScore } from "./types";
 
 //FUNCTIONS
-export function calculateAverage(numArray: number[]): number {
-    let total: number = numArray.reduce((accum, element): number => {
-        return accum + element;
+export function calculateAverage(scoreArray: SubjectScore[]): number {
+    let total: number = scoreArray.reduce((accum, element): number => {
+        return accum + element.score;
     }, 0)
-    return (total / numArray.length);
+    return (total / scoreArray.length);
 }
 
-export function filterPassingStudents(studentScores: StudentScore[]): Array<string> {
-    return studentScores.filter(student => (
-        calculateAverage(student.scores) >= 75
-    ))
-    .map(student => student.name)
-}
+// export function filterPassingStudents(studentScores: StudentScore[]): Array<string> {
+//     return studentScores.filter(student => (
+//         calculateAverage(student.scores) >= 75
+//     ))
+//     .map(student => student.name)
+// }
 
 export function getStatus(student: StudentScore): string {
     let average: number = calculateAverage(student.scores)
     return student.status = average >= 75 ? "passing" : "failing";
 }
 
-export function getStudentSummary(studentScore: StudentScore): [string, number, string] {
-    return [studentScore.name, calculateAverage(studentScore.scores), getStatus(studentScore)]
-}
+// export function getStudentSummary(studentScore: StudentScore): [string, number, string] {
+//     return [studentScore.name, calculateAverage(studentScore.scores), getStatus(studentScore)]
+// }
 
 export function addDefaultCohort(studentScores: StudentScore[]): StudentScore[] {
     return studentScores.map(student => {
@@ -51,12 +51,12 @@ export function groupByCohort(students: StudentScore[]): Record<string, string[]
 // Write a function rankStudents(studentScores: StudentScore[]): StudentScore[] that sorts students by their average score,
 // highest to lowest. If there’s a tie, sort alphabetically by name.
 
-export function rankStudents(studentScores: StudentScore[]): {name: string, average: number}[] {
-    let average = studentScores.map((student: StudentScore) => {
-        return {
-            name: student.name,
-            average: calculateAverage(student.scores),
-        }
-    });
-    return average.sort((a, b) => (b.average - a.average));
-}
+// export function rankStudents(studentScores: StudentScore[]): {name: string, average: number}[] {
+//     let average = studentScores.map((student: StudentScore) => {
+//         return {
+//             name: student.name,
+//             average: calculateAverage(student.scores),
+//         }
+//     });
+//     return average.sort((a, b) => (b.average - a.average));
+// }
