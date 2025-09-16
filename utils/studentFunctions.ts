@@ -60,3 +60,8 @@ export function rankStudents(studentScores: StudentScore[]): {name: string, aver
     });
     return average.sort((a, b) => (b.average - a.average));
 }
+
+//Write a function getBestSubject(student: StudentScore): string that returns the subject with the highest score.
+export function getBestSubject(student: StudentScore): SubjectScore["subject"] { //typescript now enforces string literal return set in SubjectScore
+    return student.scores.reduce((best, curr) => curr.score > best.score ? curr : best).subject;
+}
