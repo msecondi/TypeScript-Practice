@@ -1,5 +1,7 @@
 import { StudentScore, SubjectScore } from "./types";
 
+export const PASS_MARK = 75 as const;
+
 //FUNCTIONS
 export function calculateAverage(scoreArray: SubjectScore[]): number {
     let total: number = scoreArray.reduce((accum, element): number => {
@@ -9,15 +11,15 @@ export function calculateAverage(scoreArray: SubjectScore[]): number {
 }
 
 export function filterPassingStudents(studentScores: StudentScore[]): Array<string> {
-    return studentScores.filter(student => (
-        calculateAverage(student.scores) >= 75
-    ))
-    .map(student => student.name)
+    return studentScores
+        .filter(student => (
+            calculateAverage(student.scores) >= PASS_MARK))
+        .map(student => student.name)
 }
 
 export function getStatus(student: StudentScore): string {
     let average: number = calculateAverage(student.scores)
-    return student.status = average >= 75 ? "passing" : "failing";
+    return student.status = average >= PASS_MARK ? "passing" : "failing";
 }
 
 export function getStudentSummary(studentScore: StudentScore): [string, number, string] {

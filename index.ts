@@ -51,7 +51,7 @@ const students: StudentScore[] = [
 
 console.log("Student 1 status: " + StudentFunction.getStatus(studentOne));
 console.log(StudentFunction.calculateAverage(studentOne.scores));
-console.log(StudentFunction.filterPassingStudents(students))
+console.log("Filtered passing students: " + StudentFunction.filterPassingStudents(students))
 console.log(StudentFunction.addDefaultCohort(students))
 
 students.forEach(student => {
