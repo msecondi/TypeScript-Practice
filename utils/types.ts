@@ -1,9 +1,15 @@
-export interface SubjectScore {
-    subject: "math" | "english" | "science",
-    score: number;
-}; //[]    if you put that at the end of this type alias, it's saying this type is an array of objects containing thos key/value pairs
+export enum Subjects {
+    Math = "math",
+    English = "english",
+    Science = "science"
+}
 
-//this ^ also accomplishes the same thing
+export interface SubjectScore {
+    subject: Subjects,
+    score: number;
+}; //[]    if you put that at the end of this type alias, it's saying this type is an array of objects containing those key/value pairs
+
+// this also accomplishes the same thing as ^that^
 // export type SubjectScores = SubjectScore[];
 
 //INTERFACE

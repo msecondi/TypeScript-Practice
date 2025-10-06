@@ -1,4 +1,4 @@
-import { StudentScore, SubjectScore } from "./types";
+import { StudentScore, SubjectScore } from "./types.js";
 
 export const PASS_MARK = 75 as const;
 

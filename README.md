@@ -18,17 +18,24 @@ Expect messy code, experiments, and plenty of trial and error.
 ## Setup
 
 1. Clone the repository:
-   ```bash
    git clone https://github.com/msecondi/TypeScript-Practice
    cd TypeScript-Practice
 
 ## How to Run
-To run this file, you'll need to have Node.js and TypeScript installed on your system.
+You can run the project in two ways: directly with TypeScript (ts-node) or by compiling it first.
 
-Compile the TypeScript file to JavaScript:
+Option 1: Run in Development
 
-tsc <filename>.ts
+Run TypeScript files directly without compiling:
 
-Run the compiled JavaScript file:
+npm run dev
 
-node <filename>.js
+Option 2: Compile and Run
+
+Compile the TypeScript files into JavaScript:
+
+npm run build
+
+Then run the compiled JavaScript code:
+
+npm start

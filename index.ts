@@ -1,32 +1,34 @@
 import * as StudentFunction from "./utils/studentFunctions";
-import { StudentScore } from "./utils/types";
+import { StudentScore, Subjects } from "./utils/types";
+
+// const { Math, English, Science } = Subjects;
 
 //Individual Student declarations
 let studentOne: StudentScore = {
     id: 1,
     name: "Johnny",
     scores: [
-        { subject: "math", score: 81 },
-        { subject: "english", score: 73 },
-        { subject: "science", score: 92 }
+        { subject: Subjects.Math, score: 81 },
+        { subject: Subjects.English, score: 73 },
+        { subject: Subjects.Science, score: 92 }
     ]
 }
 let studentTwo: StudentScore = {
     id: 2, 
     name: "Alice", 
     scores: [ 
-        { subject: "math", score: 80 }, 
-        { subject: "english", score: 100 }, 
-        { subject: "science", score: 90 }
+        { subject: Subjects.Math, score: 80 }, 
+        { subject: Subjects.English, score: 100 }, 
+        { subject: Subjects.Science, score: 90 }
     ]
 }
 let studentThree: StudentScore = {
     id: 3, 
     name: "Bobby", 
     scores: [ 
-        { subject: "math", score: 50 }, 
-        { subject: "english", score: 60 }, 
-        { subject: "science", score: 70 }
+        { subject: Subjects.Math, score: 50 }, 
+        { subject: Subjects.English, score: 60 }, 
+        { subject: Subjects.Science, score: 70 }
     ],
     cohort: "Bootcamp-2"
 }
@@ -34,9 +36,9 @@ let studentFour: StudentScore = {
     id: 4, 
     name: "Charlie", 
     scores: [ 
-        { subject: "math", score: 75 }, 
-        { subject: "english", score: 75 }, 
-        { subject: "science", score: 75 }
+        { subject: Subjects.Math, score: 75 }, 
+        { subject: Subjects.English, score: 75 }, 
+        { subject: Subjects.Science, score: 75 }
     ],
     cohort: "Bootcamp-3"
 }
