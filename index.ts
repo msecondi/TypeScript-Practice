@@ -1,34 +1,34 @@
 import * as StudentFunction from "./utils/studentFunctions";
 import { StudentScore, Subjects } from "./utils/types";
 
-// const { Math, English, Science } = Subjects;
+const { Math, English, Science } = Subjects;
 
 //Individual Student declarations
 let studentOne: StudentScore = {
     id: 1,
     name: "Johnny",
     scores: [
-        { subject: Subjects.Math, score: 81 },
-        { subject: Subjects.English, score: 73 },
-        { subject: Subjects.Science, score: 92 }
+        { subject: Math, score: 81 },
+        { subject: English, score: 73 },
+        { subject: Science, score: 92 }
     ]
 }
 let studentTwo: StudentScore = {
     id: 2, 
     name: "Alice", 
     scores: [ 
-        { subject: Subjects.Math, score: 80 }, 
-        { subject: Subjects.English, score: 100 }, 
-        { subject: Subjects.Science, score: 90 }
+        { subject: Math, score: 80 }, 
+        { subject: English, score: 100 }, 
+        { subject: Science, score: 90 }
     ]
 }
 let studentThree: StudentScore = {
     id: 3, 
     name: "Bobby", 
     scores: [ 
-        { subject: Subjects.Math, score: 50 }, 
-        { subject: Subjects.English, score: 60 }, 
-        { subject: Subjects.Science, score: 70 }
+        { subject: Math, score: 50 }, 
+        { subject: English, score: 60 }, 
+        { subject: Science, score: 70 }
     ],
     cohort: "Bootcamp-2"
 }
@@ -36,9 +36,9 @@ let studentFour: StudentScore = {
     id: 4, 
     name: "Charlie", 
     scores: [ 
-        { subject: Subjects.Math, score: 75 }, 
-        { subject: Subjects.English, score: 75 }, 
-        { subject: Subjects.Science, score: 75 }
+        { subject: Math, score: 75 }, 
+        { subject: English, score: 75 }, 
+        { subject: Science, score: 75 }
     ],
     cohort: "Bootcamp-3"
 }

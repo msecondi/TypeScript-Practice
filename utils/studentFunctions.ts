@@ -52,7 +52,6 @@ export function groupByCohort(students: StudentScore[]): Record<string, string[]
 
 // Write a function rankStudents(studentScores: StudentScore[]): StudentScore[] that sorts students by their average score,
 // highest to lowest. If there’s a tie, sort alphabetically by name.
-
 export function rankStudents(studentScores: StudentScore[]): {name: string, average: number}[] {
     let average = studentScores.map((student: StudentScore) => {
         return {
