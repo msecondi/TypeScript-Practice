@@ -1,4 +1,4 @@
-import { StudentScore, SubjectScore } from "./types.js";
+import { StudentScore, SubjectScore, Subjects } from "./types.js";
 
 export const PASS_MARK = 75 as const;
 
@@ -65,4 +65,18 @@ export function rankStudents(studentScores: StudentScore[]): {name: string, aver
 //Write a function getBestSubject(student: StudentScore): string that returns the subject with the highest score.
 export function getBestSubject(student: StudentScore): SubjectScore["subject"] { //typescript now enforces string literal return set in SubjectScore
     return student.scores.reduce((best, curr) => curr.score > best.score ? curr : best).subject;
+}
+
+// new: return a new StudentScore with updated score for given subject (immutable)
+export function updateStudentScore(
+    student: StudentScore,
+    subject: Subjects,
+    newScore: number
+): StudentScore {
+    return {
+        ...student,
+        scores: student.scores.map(score =>
+            score.subject === subject ? { ...score, score: newScore } : score
+        )
+    };
 }
