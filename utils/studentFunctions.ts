@@ -75,8 +75,8 @@ export function updateStudentScore(
 ): StudentScore {
     return {
         ...student,
-        scores: student.scores.map(score =>
-            score.subject === subject ? { ...score, score: newScore } : score
-        )
+        scores: student.scores.map(score => {
+            return score.subject === subject ? { ...score, score: newScore } : score
+        })
     };
 }
