@@ -2,7 +2,6 @@ import { StudentScore, SubjectScore, Subjects } from "./types.js";
 
 export const PASS_MARK = 75 as const;
 
-//FUNCTIONS
 export function calculateAverage(scoreArray: SubjectScore[]): number {
     let total: number = scoreArray.reduce((accum, element): number => {
         return accum + element.score;
