@@ -64,7 +64,6 @@ students.forEach(student => {
 console.log(StudentFunction.groupByCohort(students));
 console.log(StudentFunction.rankStudents(students));
 
-// ...existing code...
 const updatedJohnny = StudentFunction.updateStudentScore(studentOne, Math, 95);
 console.log("Johnny after update:", updatedJohnny);
 console.log("Original Johnny unchanged:", studentOne);
